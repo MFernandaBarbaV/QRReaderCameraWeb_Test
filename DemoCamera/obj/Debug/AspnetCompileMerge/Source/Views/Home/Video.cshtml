@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "Camera Demo 2";
+}
+<script type="text/javascript" src="~/Scripts/QrCode/grid.js"></script>
+<script type="text/javascript" src="~/Scripts/QrCode/version.js"></script>
+<script type="text/javascript" src="~/Scripts/QrCode/detector.js"></script>
+<script type="text/javascript" src="~/Scripts/QrCode/formatinf.js"></script>
+<script type="text/javascript" src="~/Scripts/QrCode/errorlevel.js"></script>
+<script type="text/javascript" src="~/Scripts/QrCode/bitmat.js"></script>
+<script type="text/javascript" src="~/Scripts/QrCode/datablock.js"></script>
+<script type="text/javascript" src="~/Scripts/QrCode/bmparser.js"></script>
+<script type="text/javascript" src="~/Scripts/QrCode/datamask.js"></script>
+<script type="text/javascript" src="~/Scripts/QrCode/rsdecoder.js"></script>
+<script type="text/javascript" src="~/Scripts/QrCode/gf256poly.js"></script>
+<script type="text/javascript" src="~/Scripts/QrCode/gf256.js"></script>
+<script type="text/javascript" src="~/Scripts/QrCode/decoder.js"></script>
+<script type="text/javascript" src="~/Scripts/QrCode/qrcode.js"></script>
+<script type="text/javascript" src="~/Scripts/QrCode/findpat.js"></script>
+<script type="text/javascript" src="~/Scripts/QrCode/alignpat.js"></script>
+<script type="text/javascript" src="~/Scripts/QrCode/databr.js"></script>
+
+<script type="text/javascript" src="~/Scripts/Video.js"></script>
+
+<h3>Opción 2</h3>
+<h4>El código QR se lee con un video, es necesaria una conexión https</h4>
+<div >
+    <table   class="table" >
+        <tr >
+            <td  align="center">
+                <button onclick="setwebcam()" class="btn btn-success btn-sm">Abrir cámara</button>
+            </td>
+            <td  align="center">
+                <button onclick="closeWebCam()" class="btn btn-danger btn-sm">Cerrar cámara</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <div id="outdiv">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <div id="result">
+                   
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+</div>
+<canvas id="qr-canvas" width="800" height="600" style="width:800px; height: 600px;"></canvas>
+<script type="text/javascript">load();</script>
+
+
+<style type="text/css">
+
+    
+    #v {
+        width: 320px;
+        height: 240px;
+    }
+
+    #qr-canvas {
+        display: none;
+    }
+
+    #qrfile {
+        width: 320px;
+        height: 240px;
+    }
+
+    #mp1 {
+        text-align: center;
+        font-size: 35px;
+    }
+
+    #imghelp {
+        position: relative;
+        left: 0px;
+        top: -160px;
+        z-index: 100;
+        font: 18px arial,sans-serif;
+        background: #f0f0f0;
+        margin-left: 35px;
+        margin-right: 35px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 20px;
+    }
+
+
+
+    #outdiv {
+        width: 320px;
+        height: 240px;
+    }
+
+    /*#result {
+        padding: 20px;
+        width: 70%;
+    }*/
+
+    span {
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+</style>

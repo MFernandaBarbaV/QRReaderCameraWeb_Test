@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>DEMO CAMARA</h1>
+    @*<p><a href="https://asp.net" class="btn btn-primary btn-lg">Leer código</a></p>*@
+    @Html.ActionLink("Opc 1 - Foto", "Camera", "Home", new { @class = "btn btn-primary btn-lg" })
+    @Html.ActionLink("Opc 2 - Video", "Video", "Home", new { @class = "btn btn-primary btn-lg" })
+    @Html.ActionLink("Opc 3 - partial view", "Video2", "Home", new { @class = "btn btn-primary btn-lg" })
+
+</div>
+

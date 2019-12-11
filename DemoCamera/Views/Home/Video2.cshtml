@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Camera Demo 2";
+}
+
+@Scripts.Render("~/bundles/jquery")
+
+<script>
+
+    function loadCamera() {
+          var url = '@Url.Action("QRVideo", "Home")';
+        $('#outdiv').load(url);
+    }
+
+     function closecamera() {
+          var url = '@Url.Action("QRVideo", "Home")';
+         document.getElementById("outdiv").innerHTML = ""
+         closeWebCam();
+    }
+
+</script>
+
+
+<h3>Opción 3</h3>
+<h4>El código QR se lee con un video, es necesaria una conexión https, se utiliza partial view</h4>
+<div>
+    <table class="table">
+        <tr>
+            <td align="center">
+                <button onclick="loadCamera()" class="btn btn-success btn-sm">Abrir cámara</button>
+            </td>
+            <td align="center">
+                <button onclick="closecamera()" class="btn btn-danger btn-sm">Cerrar cámara</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <div id="outdiv">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <div id="result">
+
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+</div>
+
+<canvas id="qr-canvas" width="800" height="600" style="width:800px; height: 600px;"></canvas>
+
+<style type="text/css">
+</style>
+

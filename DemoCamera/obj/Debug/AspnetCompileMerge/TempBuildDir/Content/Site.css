@@ -1,0 +1,49 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    width:100%
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+.qrcode-text {
+    padding-right: 1.7em;
+    margin-right: 0;
+    height:30px;
+}
+
+.qrcode-text-btn {
+    display: inline-block;
+    background: url(//dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg) 50% 50% no-repeat;
+    height: 2em;
+    width: 1.7em;
+   
+    cursor: pointer
+}
+
+    .qrcode-text-btn > input[type=file] {
+        position: absolute;
+        overflow: hidden;
+        width: 1px;
+        height: 1px;
+        opacity: 0
+    }

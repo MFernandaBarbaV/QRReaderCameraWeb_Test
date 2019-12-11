@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Camera Demo";
+}
+@Scripts.Render("~/bundles/qrcodeScripts")
+@Scripts.Render("~/bundles/qrcodeScripts2")
+
+<h3>Opción 1</h3>
+<h4>El código QR se lee por medio de una foto</h4>
+<div class="row" >
+    <input type=text size=16 placeholder="" class="qrcode-text input-lg">
+    <label class="qrcode-text-btn btn btn-lg" >
+        <input type=file accept="image/*" capture=environment onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex=-1>   
+    </label>
+    @*<input type=button value="Go" disabled>*@
+    <script>
+        function openQRCamera(node) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                node.value = "";
+                qrcode.callback = function (res) {
+                    if (res instanceof Error) {
+                        confirm("No QR code found.");
+                    } else {
+                        // alert("ok");
+                        node.parentNode.previousElementSibling.value = res;
+                    }
+                };
+                qrcode.decode(reader.result);
+            };
+            reader.readAsDataURL(node.files[0]);
+        }
+
+        function showQRIntro() {
+            // return confirm("Use your camera to take a picture of a QR code.");
+        }
+    </script>
+</div>
